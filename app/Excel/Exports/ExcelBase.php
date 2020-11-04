@@ -101,8 +101,8 @@ class ExcelBase implements
                 }
                 foreach ($this->columnFormatList as $column=>$format) {
                     $column = trim($column);
-                    if (true) {
-                    //if (strpos($column, ":")) { // if this is a range
+                    //if (true) {
+                    if (strpos($column, ":")) { // if this is a range
 
                         /** @var Worksheet $worksheet */
                         $worksheet = $event->sheet->getDelegate();

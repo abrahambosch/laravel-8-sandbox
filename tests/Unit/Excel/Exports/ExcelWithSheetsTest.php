@@ -171,11 +171,12 @@ class ExcelWithSheetsTest extends TestCase
      */
     public function testExportExcelFormat()
     {
+        $datetime = new\DateTime();
         $data = [
-            ['food', 'color', 123456.7777777, 188.444444444, 188.444444444, 123456.7777777],
-            ['banana', 'yellow', 123456.7777777, 188.555555555, 188.444444444, 123456.555555555],
-            ['apple', 'red', 123456.7777777, 188.444444444, 188.444444444, 123456.7777777],
-            ['grapes', 'green', 123456.7777777, 188.44444444, 188.444444444, 123456.7777777]
+            ['food', 'color', 123456.7777777, 188.444444444, 188.444444444, 123456.7777777, 55, $datetime],
+            ['banana', 'yellow', 123456.7777777, 188.555555555, 188.444444444, 123456.555555555, 66, $datetime],
+            ['apple', 'red', 123456.7777777, 188.444444444, 188.444444444, 123456.7777777, 77, $datetime],
+            ['grapes', 'green', 123456.7777777, 188.44444444, 188.444444444, 123456.7777777, 88, $datetime]
         ];
 
         $newFileName = $this->tempPath() . DIRECTORY_SEPARATOR .  'testExportExcelFormat' . $this->guidv4() . ".xlsx";
@@ -185,10 +186,12 @@ class ExcelWithSheetsTest extends TestCase
             $excel->sheetFromCollection('First Sheet', function(ExcelCollection $sheet) use ($data) {
                 $sheet->setCollection($data);
                 $sheet->setColumnFormat([
+                    'A:B'     => NumberFormat::FORMAT_TEXT, //'@',             // Text
                     'C' => NumberFormat::FORMAT_ACCOUNTING_USD, //'_(#,##0.00_);_(\(#,##0.00\);_("-"??_);_(@_)', // Amounts: Accounting
-                    //'E' => '0', // Just plain numbers for the GL Code headers.
-                    //'B'   => 'm/d/yy h:mm',
-                    'A:B'     => NumberFormat::FORMAT_TEXT, //'@',             // Investor Borrower ID: Text
+                    'C:E' => NumberFormat::FORMAT_ACCOUNTING_USD, //'_(#,##0.00_);_(\(#,##0.00\);_("-"??_);_(@_)', // Amounts: Accounting
+                    'F' => '_(#,##0_);_(\(#,##0\);_("-"??_);_(@_)', // Amounts: Accounting (Integer)
+                    'G' => '0', // Just plain numbers
+                    'H'   => 'm/d/yy h:mm',
                 ]);
             });
         });
