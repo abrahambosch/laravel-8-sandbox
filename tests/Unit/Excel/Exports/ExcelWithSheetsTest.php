@@ -200,7 +200,22 @@ class ExcelWithSheetsTest extends TestCase
 
         $this->assertFileExists($newFileName);
 
-        echo "Filename: $newFileName\n";
+        $method = __METHOD__;
+
+        echo <<<__THIS
+##########################################################
+Method: $method
+Created this Excel file: $newFileName
+Note that Column C has the correct format.
+Column D:E should also have the same formatting but it doesn't.
+This is the problem. The library doesn't handle ranges out of the box.
+For example, this does not work: \$sheet->setColumnFormat(['D:E' => NumberFormat::FORMAT_ACCOUNTING_USD])
+
+The code responsible for formatting the numbers is app/Excel/Exports/ExcelBase.php,  registerEvents() function, line 113
+##########################################################
+
+__THIS;
+
         //unlink($newFileName);
     }
 

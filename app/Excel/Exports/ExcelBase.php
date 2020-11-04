@@ -110,7 +110,7 @@ class ExcelBase implements
                         $worksheet->getStyle($column);
                         echo "selected cells: " . $worksheet->getSelectedCells() . "\n";
 
-                        $worksheet->getStyle($column)
+                        $worksheet->getStyle($column)       // TODO: This is not working for some reason. Need to figure out why.
                             ->getNumberFormat()
                             ->setFormatCode($format);
 

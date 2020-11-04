@@ -76,15 +76,15 @@ class ExcelToCollectionImportTest extends TestCase
      *
      * @return void
      */
-    public function testExcelImportDateField()
-    {
-        $fullPathFileName = base_path("/tests/data/excel/example2.xls");
-        $sheet = new ExcelToCollectionImport();
-        $sheet->import($fullPathFileName);
-        /** @var Collection $collection */
-        $collections = $sheet->getCollections();
-        print_r($collections);
-        //$this->assertInstanceOf(Carbon::class, $collections[0][1][4]);
-        $this->assertEquals("9/28/2020", $collections[0][1][4]);
-    }
+//    public function testExcelImportDateField()
+//    {
+//        $fullPathFileName = base_path("/tests/data/excel/example2.xls");
+//        $sheet = new ExcelToCollectionImport();
+//        $sheet->import($fullPathFileName);
+//        /** @var Collection $collection */
+//        $collections = $sheet->getCollections();
+//        print_r($collections);
+//        //$this->assertInstanceOf(Carbon::class, $collections[0][1][4]);
+//        $this->assertEquals("9/28/2020", $collections[0][1][4]);
+//    }
 }
