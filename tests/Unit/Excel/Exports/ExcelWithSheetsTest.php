@@ -188,7 +188,7 @@ class ExcelWithSheetsTest extends TestCase
                 $sheet->setColumnFormat([
                     'A:B'     => NumberFormat::FORMAT_TEXT, //'@',             // Text
                     'C' => NumberFormat::FORMAT_ACCOUNTING_USD, //'_(#,##0.00_);_(\(#,##0.00\);_("-"??_);_(@_)', // Amounts: Accounting
-                    'C:E' => NumberFormat::FORMAT_ACCOUNTING_USD, //'_(#,##0.00_);_(\(#,##0.00\);_("-"??_);_(@_)', // Amounts: Accounting
+                    'D:E' => NumberFormat::FORMAT_ACCOUNTING_USD, //'_(#,##0.00_);_(\(#,##0.00\);_("-"??_);_(@_)', // Amounts: Accounting
                     'F' => '_(#,##0_);_(\(#,##0\);_("-"??_);_(@_)', // Amounts: Accounting (Integer)
                     'G' => '0', // Just plain numbers
                     'H'   => 'm/d/yy h:mm',
