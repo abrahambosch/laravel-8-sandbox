@@ -10,4 +10,7 @@ composer install
 php vendor/bin/phpunit
 ```
 
+## Laravel Excel
+https://docs.laravel-excel.com/3.1/getting-started/
+
 
