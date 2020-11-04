@@ -25,6 +25,10 @@ ddev ssh
 ```
 
 
+## Laravel Excel
+- we are using the Laravel Excel 3.1 Library
+- https://docs.laravel-excel.com/3.1/getting-started/
+
 ## Testing
 
 phpunit tests have been writted to test the Excel library. 
