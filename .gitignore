@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/.idea
 .env
 .env.backup
 .phpunit.result.cache
@@ -11,6 +12,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .DS_Store
-/.idea
 /storage/framework/laravel-excel
 
