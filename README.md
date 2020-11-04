@@ -1,4 +1,4 @@
-# Laravel 8 Test Project
+# Laravel 8 Sandbox
 
 ## Instructions for testing Excel issue. 
 ```
@@ -12,5 +12,4 @@ php vendor/bin/phpunit
 
 ## Laravel Excel
 https://docs.laravel-excel.com/3.1/getting-started/
-
 
